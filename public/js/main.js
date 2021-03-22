@@ -3,7 +3,7 @@
 const body = document.querySelector('body');
 const p = document.getElementById('mode');
 
-fetch('api/v0')
+fetch('api/v0/images')
 .then((res) => {
   if (!res.ok) throw new Error('Not OK!')
 
