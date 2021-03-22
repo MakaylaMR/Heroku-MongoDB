@@ -14,5 +14,4 @@ const jeepSchema = new mongoose.Schema(
   }
 );
 
-const Jeep = mongoose.model('Jeep', jeepSchema);
-module.exports = Jeep;
+module.exports = mongoose.model('Jeep', jeepSchema);

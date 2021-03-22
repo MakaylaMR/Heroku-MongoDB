@@ -2,7 +2,7 @@
 
 ### Author/Creator: Makayla Martineau Raymundo
 
-## JSON gallery endpoint with fetch
+## JSON Routes with Heroku and MongoDB Atlas  
 This assignment includes:
 - Create a 3-page website served with rendered view engine templates.
 - Fetch a list of gallery items using fetch().
