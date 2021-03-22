@@ -1,6 +1,14 @@
 <%- include('../partials/head')%>
 </head>
 <body>
-  
+  <%- include('../partials/nav')%>
+  <main class="gallery-container">
+    <figure>
+      <h2><%= jeep.title  %> </h2>
+      <img src="<%= jeep.pathURL %> " alt="<%= jeep.description %> ">
+      <figcaption><%= jeep.description %> </figcaption>
+    </figure>
+  </main>
+  <%- include('../partials/footer')%>
 </body>
 </html>

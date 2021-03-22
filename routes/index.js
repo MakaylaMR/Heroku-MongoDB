@@ -11,18 +11,18 @@ router.use((req, res, next) => {
   next()
 })
 
-// home page
+// Home
 router.get('/', (req, res)=> {
   res.render('pages/index', {pageTitle: 'Home'})
 })
 
-// login page
+// Login
 router.get('/login', (req, res)=> {
   res.render('pages/login', {pageTitle: 'login', dayjs: dayjs})
   
 })
 
-// register page
+// Register
 router.get('/register', (req, res)=> {
   res.render('pages/register', {pageTitle: 'register', dayjs: dayjs})
 })
@@ -30,18 +30,14 @@ router.get('/register', (req, res)=> {
 // single image page
 router.get('/:id', (req, res) => {
   
-  image = images.find(function(item){
+  image = jeeps.find((item) => {
     return req.params.id === item.id
   })
 
-  // if (!id) {
-  //   response.sendStatus(404);
-  // }
-
   res.render('pages/single-image', {
-    pageTitle: image.description,
-    image: image
-  });
+    pageTitle: jeep.description,
+    image: jeep
+  })
 })
 
 // API

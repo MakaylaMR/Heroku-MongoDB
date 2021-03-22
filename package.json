@@ -2,9 +2,10 @@
   "name": "cpnt262-a5",
   "version": "1.0.0",
   "description": "CPNT262-a5 Assignment",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
