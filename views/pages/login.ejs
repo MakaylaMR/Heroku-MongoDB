@@ -1,0 +1,16 @@
+<%- include('../partials/head')%>
+</head>
+<body>
+  <%- include('../partials/nav')%>
+    <div class="login">
+      <h1>Login</h1>
+        <form method="post">
+          <input type="text" name="u" placeholder="Username" required="required" />
+            <input type="password" name="p" placeholder="Password" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large">Let me in Please.</button>
+        </form>
+          <p class="time"><%= `Current time: ${dayjs()}` %></p>
+    </div>
+  <%- include('../partials/footer')%>
+</body>
+</html>
