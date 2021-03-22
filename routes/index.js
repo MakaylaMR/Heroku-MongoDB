@@ -27,20 +27,6 @@ router.get('/register', (req, res)=> {
   res.render('pages/register', {pageTitle: 'register', dayjs: dayjs})
 })
 
-// single image page
-router.get('/:id', (req, res) => {
-  
-  image = jeeps.find((item) => {
-    return req.params.id === item.id
-  })
-
-  res.render('pages/single-image', {
-    pageTitle: jeep.description,
-    image: jeep
-  })
-})
-
-// API
 router.use('/api/v0/', api);
 
 module.exports = router
