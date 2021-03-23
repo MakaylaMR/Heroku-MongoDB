@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/',index)
 
 //:id
-app.use('images', jeeps)
+app.use('/images', jeeps)
 
 //custom 404
 app.use((req, res) => {
