@@ -23,7 +23,7 @@ app.use('/images', jeeps)
 //custom 404
 app.use((req, res) => {
   res.status(404);
-  res.sendFile(path.join(__dirname,'public/404.html'));
+  res.sendFile(path.join(__dirname,'pages/error'));
 });
 
 // general error handling middleware adopted from Vitaly. 
@@ -35,6 +35,7 @@ app.use((err, req, res, next) => {
   // Render the error page using the default layout
   res.render('pages/error', {pageTitle: errStatus, errCode: errStatus});
 });
+
 
 //port .env or 3000
 const PORT = process.env.PORT || 3000;

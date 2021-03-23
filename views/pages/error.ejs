@@ -1,14 +1,20 @@
-<%- include('../partials/head')%>
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/404.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <title><%= errCode %></title>
+</head>
 <body>
-  <main>
-    <div class="wrapper">
-      <h1><%= errCode %> error!</h1>
-      <h2>Uh oh...</h2>
-      <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/2e5d6f776534fb7359fe412019743be199f86e6a/68747470733a2f2f692e696d6775722e636f6d2f426a4b5445386d2e6a706567" alt="shaking head and hands with the word 'panik'">
-      <p>Dont panic! click below to go to the home page</p>
-      <a href="/"><button>Home Please!</button></a>
+  <div id='oops'>
+    <div id='error-text'>
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0yNTYsMEMxMTQuNjE4LDAsMCwxMTQuNjE4LDAsMjU2czExNC42MTgsMjU2LDI1NiwyNTZzMjU2LTExNC42MTgsMjU2LTI1NlMzOTcuMzgyLDAsMjU2LDB6IE0yNTYsNDY5LjMzMyAgICAgYy0xMTcuODE4LDAtMjEzLjMzMy05NS41MTUtMjEzLjMzMy0yMTMuMzMzUzEzOC4xODIsNDIuNjY3LDI1Niw0Mi42NjdTNDY5LjMzMywxMzguMTgyLDQ2OS4zMzMsMjU2UzM3My44MTgsNDY5LjMzMywyNTYsNDY5LjMzMyAgICAgeiIgZmlsbD0iIzZiNzc4ZCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJCQk8cGF0aCBkPSJNMzQxLjMzMywyMTMuMzMzYzIzLjU3MywwLDQyLjY2Ny0xOS4wOTMsNDIuNjY3LTQyLjY2N0MzODQsMTQ3LjA5MywzNjQuOTA3LDEyOCwzNDEuMzMzLDEyOCAgICAgYy0yMy41NzMsMC00Mi42NjcsMTkuMDkzLTQyLjY2Nyw0Mi42NjdDMjk4LjY2NywxOTQuMjQsMzE3Ljc2LDIxMy4zMzMsMzQxLjMzMywyMTMuMzMzeiIgZmlsbD0iIzZiNzc4ZCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJCQk8cGF0aCBkPSJNMTcwLjY2NywyMTMuMzMzYzIzLjU3MywwLDQyLjY2Ny0xOS4wOTMsNDIuNjY3LTQyLjY2N2MwLTIzLjU3My0xOS4wOTMtNDIuNjY3LTQyLjY2Ny00Mi42NjcgICAgIEMxNDcuMDkzLDEyOCwxMjgsMTQ3LjA5MywxMjgsMTcwLjY2N0MxMjgsMTk0LjI0LDE0Ny4wOTMsMjEzLjMzMywxNzAuNjY3LDIxMy4zMzN6IiBmaWxsPSIjNmI3NzhkIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+CgkJCTxwYXRoIGQ9Ik0yNTUuOTk2LDI1Ni4wMDZjLTYwLjk5OSwwLTExNy44NzksNDEuMjYxLTEzOS45MzIsOTkuMDYyYy00LjIsMTEuMDA4LDEuMzE5LDIzLjMzNywxMi4zMjcsMjcuNTM3ICAgICBzMjMuMzM3LTEuMzE5LDI3LjUzNy0xMi4zMjdjMTUuODg3LTQxLjY0LDU3LjE5NC03MS42MDUsMTAwLjA2OC03MS42MDVjNDIuODU4LDAsODQuMTY2LDI5Ljk1LDEwMC4wNzIsNzEuNTczICAgICBjNC4yMDYsMTEuMDA2LDE2LjUzNywxNi41MTgsMjcuNTQzLDEyLjMxM3MxNi41MTgtMTYuNTM3LDEyLjMxMy0yNy41NDNDMzczLjg0NiwyOTcuMjQzLDMxNi45NzEsMjU2LjAwNiwyNTUuOTk2LDI1Ni4wMDZ6IiBmaWxsPSIjNmI3NzhkIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+CgkJPC9nPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4=" />
+        <span>Error <%= errCode%></span>
+        <p>Sorry we can't find what you're looking for!</p>
+        <button> <a href="/">Take me back!</a></button>
     </div>
-  </main>
-  <%- include('../partials/footer')%>
+</div>
 </body>
 </html>
