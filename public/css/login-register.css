@@ -13,6 +13,7 @@
 .btn-primary,
 .btn-primary:hover {
   color: #fff;
+  margin-bottom: 1rem;
 }
 
 .btn-primary.active {
@@ -36,12 +37,16 @@
 
 .login,
 .register {
-  position: absolute;
-  top: 50%;
+  position: relative;
   left: 50%;
-  margin: -150px 0 0 -150px;
+  margin: -5px 0 0 -150px;
   width: 300px;
-  height: 300px;
+
+  border: 2px solid #6b778d;
+  border-radius: 0.5rem;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .login h1,
