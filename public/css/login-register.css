@@ -1,0 +1,74 @@
+/******************/
+/******LOGIN*******/
+/*****REGISTER*****/
+/******************/
+
+.btn:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  background-position: 0 -15px;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  color: #fff;
+}
+
+.btn-primary.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-primary {
+  background-color: #6b778d;
+}
+
+.btn-primary:hover {
+  background-color: #6b778d;
+  cursor: pointer;
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+
+.login,
+.register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  width: 300px;
+  height: 300px;
+}
+
+.login h1,
+.register h1 {
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.time {
+  color: #FFF;
+}
+
+footer {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

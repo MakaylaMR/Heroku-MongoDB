@@ -1,16 +1,19 @@
-<%- include('../partials/head')%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include ('../partials/head')%>
+  <link rel="stylesheet" href="css/login-register.css">
 </head>
 <body>
-  <%- include('../partials/nav')%>
-    <div class="login">
-      <h1>Login</h1>
-        <form method="post">
-          <input type="text" name="u" placeholder="Username" required="required" />
-            <input type="password" name="p" placeholder="Password" required="required" />
-            <button type="submit" class="btn btn-primary btn-block btn-large">Let me in Please.</button>
-        </form>
-          <p class="time"><%= `Current time: ${dayjs()}` %></p>
-    </div>
-  <%- include('../partials/footer')%>
+  <%- include ('../partials/nav')%>
+  <section class="login">
+    <h1>Login</h1>
+      <form method="post">
+        <input type="text" name="u" placeholder="Username" required="required" />
+          <input type="password" name="p" placeholder="Password" required="required" />
+          <button type="submit" class="btn btn-primary btn-block btn-large">Let me in Please.</button>
+      </form>
+  </section>
+  <%- include ('../partials/footer')%>   
 </body>
 </html>

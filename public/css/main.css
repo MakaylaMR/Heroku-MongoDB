@@ -1,18 +1,16 @@
 /*********************/
-/*****FONTS**********/
+/*****Fonts*****/
 /********************/
-
 
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@700&display=swap');
 
-/*         FONTS        */
-/*headings*/
+/*Bold*/
 h1,
 h2 {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-/*paragraphs*/
+/*Normal*/
 figcaption,
 a,
 footer,
@@ -20,52 +18,108 @@ p {
   font-family: 'Cabin', sans-serif;
 }
 
-
-
 /***********************/
-/*****GALLERY**********/
+/****Desktop First****/
 /**********************/
 
-/*this is the section part of the html.. includes header*/
+/* Navigation + Checkbox */
 
-/*section = */
-.container {
-  min-height: 94.6vh;
-
-  align-items: center;
-}
-
-/*header + nav bar*/
-/*header*/
-.header {
-  text-align: center;
-
-  padding: 0.5rem;
-  margin: 0;
-}
-
-header {
+.head {
   color: #FFF;
 }
 
-/*footer*/
-footer {
-  background: #17223b;
-  color: #6b778d;
-
-  margin: 0;
-
-  text-align: center;
+.nav-wrapper [type=checkbox] {
+  /*removes checkbox*/
+  display: none;
 }
 
-body {
+label {
+  /*this removes whitespace above the header, only applies to larger screens*/
+  display: none;
+}
+
+#hamburger {
+  /*honestly not sure why I chose position:relative; it worked and did the job so ?*/
+  position: relative;
+
+  /*index of -1 make it so the checkbox is hidden*/
+  z-index: -1;
+}
+
+ul {
+  display: grid;
+  /*change the "5" to the amount of li elements you have */
+  grid-template-columns: repeat(3, auto);
+
+  background-color: #6b778d;
+
+  /*gives the ul padding (the black bar at the top of the page)*/
+  padding: 0.7rem;
+}
+
+li {
+  /*on larger screens makes it the listed elements (under nav => ul => li) positioned to the right of the grid cell*/
+  justify-self: center;
+}
+
+li a {
+  /*adds padding around li elements*/
+  padding: 0.5rem;
+
+  /*removes underline for links*/
+  text-decoration: none;
+}
+
+li a:hover {
+  /*when hovering over li elements this is the background color*/
   background-color: #263859;
 }
 
-/*using Grid*/
-main {
+
+/* Hero Section */
+
+.hero {
+  /* display grid to have more control over child elements, specifically the button */
   display: grid;
-  justify-items: center;
+
+  text-align: center;
+
+  /*if not align-self:start, "Hello World" container would be located in the middle of the grid cell, so lower down the page*/
+  align-self: start;
+
+  padding: 8rem;
+
+  /* Background Image */
+  background-image: url("https://picsum.photos/id/1036/1200/1300");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.hero h1 {
+  margin: 0;
+
+  padding: 0.5rem;
+
+  color: #FFF;
+}
+
+.hero p {
+  margin: 0;
+
+  padding-bottom: 0.5rem;
+
+  color: #FFF;
+}
+
+/* Section + Figure Elements*/
+
+.container {
+  display: grid;
+  min-height: 94.6vh;
+
+  align-items: center;
 }
 
 figure {
@@ -92,20 +146,6 @@ figure {
   ;
 }
 
-/* Naming Grid Areas */
-img {
-  grid-area: image;
-
-  object-fit: cover;
-
-  width: 46rem;
-  height: 27rem;
-  max-width: 100%;
-
-  border: 2px solid #6b778d;
-  border-radius: 2rem;
-}
-
 h2 {
   grid-area: title;
 
@@ -118,6 +158,19 @@ h2 {
   border-radius: 1rem;
 
   color: #FFF;
+}
+
+img {
+  grid-area: image;
+
+  object-fit: cover;
+
+  width: 46rem;
+  height: 27rem;
+  max-width: 100%;
+
+  border: 2px solid #6b778d;
+  border-radius: 2rem;
 }
 
 a {
@@ -148,7 +201,39 @@ figcaption {
   color: #FFF;
 }
 
-/* makes the grid responsive to screen sizes with a max width of 55rem */
+
+/* Footer */
+footer {
+  background: #17223b;
+  color: #6b778d;
+
+  margin: 0;
+
+  text-align: center;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+footer p {
+  /*gives it a smaller footer (vertically)*/
+  margin: 0;
+}
+
+/* Others */
+body {
+  background-color: #263859;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+}
+
+/***********************/
+/**Max-width: 55rem**/
+/**********************/
+
 @media screen and (max-width: 55rem) {
   figure {
     grid-template-columns: auto auto;
@@ -161,84 +246,10 @@ figcaption {
   }
 }
 
-/* removes borders around title, link and description */
-@media screen and (max-width: 36.5rem) {
-  h2 {
-    border: none;
-  }
+/***********************/
+/**Max-width: 42.7rem**/
+/**********************/
 
-  a {
-    border: none;
-  }
-
-  figcaption {
-    border: none;
-  }
-}
-
-/*header => div => nav => ul => li*/
-.head li {
-  /*on larger screens makes it the listed elements (under nav => ul => li) positioned to the right of the grid cell*/
-  justify-self: center;
-}
-
-/*header => div => nav => ul => li => a*/
-a {
-  /*adds padding around li elements*/
-  padding: 0.5rem;
-
-  /*removes underline for links*/
-  text-decoration: none;
-}
-
-a:hover {
-  /*when hovering over li elements this is the background color*/
-  background-color: #263859;
-}
-
-/*header => div => nav => ul*/
-ul {
-  display: grid;
-  /*change the "5" to the amount of li elements you have */
-  grid-template-columns: repeat(4, auto);
-
-  background-color: #6b778d;
-
-  /*gives the ul padding (the black bar at the top of the page)*/
-  padding: 0.7rem;
-}
-
-/*hamburger menu **NOTE** actual hamburger menu is in the media querie below, this is to ensure parts of the html meant for hamburger menu do not show up on larger screens*/
-
-.nav-wrapper [type=checkbox] {
-  /*removes checkbox*/
-  display: none;
-}
-
-#hamburger {
-  /*honestly not sure why I chose position:relative; it worked and did the job so ?*/
-  position: relative;
-
-  /*index of -1 make it so the checkbox is hidden*/
-  z-index: -1;
-}
-
-label {
-  /*this removes whitespace above the header, only applies to larger screens*/
-  display: none;
-}
-
-footer p {
-  /*gives it a smaller footer (vertically)*/
-  margin: 0;
-}
-
-footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-/*making it responsive with media queries*/
 @media screen and (max-width: 42.7rem) {
   ul {
     /*makes it so the list is stacked vertically*/
@@ -296,69 +307,21 @@ footer {
   }
 }
 
-/******************/
-/******LOGIN*******/
-/*****REGISTER*****/
-/******************/
+/***********************/
+/**Max-width: 36.5rem**/
+/**********************/
 
-.btn:hover {
-  color: #333333;
-  text-decoration: none;
-  background-color: #e6e6e6;
-  background-position: 0 -15px;
-}
+/* removes borders around title, link and description */
+@media screen and (max-width: 36.5rem) {
+  h2 {
+    border: none;
+  }
 
-.btn-primary,
-.btn-primary:hover {
-  color: #fff;
-}
+  a {
+    border: none;
+  }
 
-.btn-primary.active {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.btn-primary {
-  background-color: #6b778d;
-}
-
-.btn-primary:hover {
-  background-color: #6b778d;
-  cursor: pointer;
-}
-
-.btn-block {
-  width: 100%;
-  display: block;
-}
-
-
-.login,
-.register {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -150px 0 0 -150px;
-  width: 300px;
-  height: 300px;
-}
-
-.login h1,
-.register h1 {
-  color: #fff;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-
-input {
-  width: 100%;
-  margin-bottom: 10px;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 10px;
-  color: #fff;
-  border-radius: 4px;
-}
-
-.time {
-  color: #FFF;
+  figcaption {
+    border: none;
+  }
 }
