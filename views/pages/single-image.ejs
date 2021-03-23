@@ -1,12 +1,13 @@
 <%- include('../partials/head')%>
+<script src="js/main.js" defer></script>
 </head>
 <body>
   <%- include('../partials/nav')%>
-  <main class="gallery-container">
+  <main>
     <figure>
       <h2><%= jeep.title  %> </h2>
       <img src="/<%= jeep.pathURL %> " alt="<%= jeep.description %> ">
-      <figcaption><%= jeep.description %> </figcaption>
+      <figcaption><%= jeep.description%> Photo By <a href="<%= jeep.creditURL %> "><%= jeep.credit %> </a></figcaption>
     </figure>
   </main>
   <%- include('../partials/footer')%>
