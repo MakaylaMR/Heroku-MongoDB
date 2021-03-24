@@ -13,8 +13,10 @@ router.get('/images', (req, res) => {
       res.status(404)
       res.sendFile(__dirname + '../../public/404.html')
     }
+    console.log(images)
     res.json(images)
   })
+
 })
 
 // Single id

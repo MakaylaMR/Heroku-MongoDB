@@ -26,7 +26,7 @@ app.use((req, res) => {
   res.sendFile(path.join(__dirname,'pages/error'));
 });
 
-// general error handling middleware adopted from Vitaly. 
+// This code was taken from Vitaly. I could not figure out for the life of me how to make this 500 error message to work like the 404 one.
 app.use((err, req, res, next) => {
   res.locals.message = err.message;
   const errStatus = err.status || 500;
