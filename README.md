@@ -4,116 +4,66 @@
 
 ## JSON Routes with Heroku and MongoDB Atlas  
 This assignment includes:
-- Create a 3-page website served with rendered view engine templates.
-- Fetch a list of gallery items using fetch().
-- Serve a JSON GET /gallery endpoint using app.get() and a custom module.
-- Custom 404 page
+- A Mongoose model for the JSON gallery route
+- Migrated the data in the custom gallery module to MongoDB Atlas
+- Connected Heroku app to an Atlas database
+- Created a single image endpoint to my app
 
 The image gallery was used from assignment CPNT262-a2.
-
-
-This project includes `npm`, `express`, `dayjs`, `dotenv`, `fetch()`, `routes`, `views` and a custom 404 page. All deployed from a live Heroku server.
-
+## GET Endpoints
+- GET `/`
+  - https://jeeps-for-the-win.herokuapp.com/
+- GET `/Register`
+  - https://jeeps-for-the-win.herokuapp.com/register
+- GET `/Login`
+  - https://jeeps-for-the-win.herokuapp.com/login
 ## Links
 
-GitHub Repository: https://github.com/MakaylaMR/cpnt262-a4
+GitHub Repository: https://github.com/MakaylaMR/cpnt262-a5
 
-Heroku App: https://json-gallery.herokuapp.com/
+Heroku App: https://jeeps-for-the-win.herokuapp.com/
 
-## Server Setup
+## Criteria
+### Gallery `mongoose` model
+The Mongoose model can be found in the `models` directory. It includes:
+- `id`
+- `title`
+- `description`
+- `width`
+- `height`
+- `pathURL`
+- `linkURL`
+- `credit`
+- `creditLink`
+- `alt`
 
-The project directory structure resembles as follows: 
-```
-project-root
-└─ data
-   └─ gallery.js (or similar)   
-└─ node_modules 
-└─ public
-   ├─ css
-   ├─ images
-   └─ js
-└─ routes
-   └─ api
-      └─ v0.js
-   └─ index.js
-└─ views
-   └─ partials
-      ├─ footer.ejs
-      ├─ header.ejs
-      └─ nav.ejs
-   └─ pages
-      └─ index.ejs
-      ├─ login.ejs
-      └─ register.ejs
-└─ _connection.js
-└─ .env
-└─ .gitignore
-└─ config.js
-├─ package-lock.json
-├─ package.json
-└─ README.md
-└─ server.js
-```
-Please note that the `_connection.js` and `.env` were optional. They are simply here for practice purposes, this does not affect the way the website functions.
+ `require('./models/images.js)` was used in `import.js` file:
+- line 8
 
-### `express` + `ejs` + custom module + `dayjs`
-`express`, `ejs` and `dayjs` can be found as dependencies in the `package.json` file:
-- lines 16, 15 and 13 respectively 
+Connected to MongoDB Atlas using my MONGODB_URL located inside the `.env` file.
 
-`dayjs` was chosen as the additional npm module of my choice.
+Responds with a custom 500 Internal Server error page if connection fails located in the `server.js` file:
+- line 29-36
 
-The custom module can be found in `data/gallery.js`
+## Rendered single image route
+`GET /images/:id` can be found in `routes/images.js`:
+- lines 12-24
 
-## Views
-Load a view engine (ejs, pug)
-- `package.json` line 15
+`single-image.ejs` is rendered when the image is clicked on, this can be found in `views/pages`
 
-HTML Endpoints
-- `routes/index.js`
-  - `GET /` lines 14-16
-  - `GET /login` lines 19-21
-  - `GET /register` lines 24-26
+All templates include Site title and Page title variables. They also include all partials from CPNT262-a4 as well as a additional partial which I called `hero.ejs`. 
 
-Each page must incorporate the following template variables:
-- `config.js`
-  - `siteTitle` line 2
+The CSS and pages for this assignment have been cleaned up for better readability. 
 
-- `routes/index.js`
-  - `pageTitle` lines 15,20 and 25
+### Database Import
+Data was imported into MongoDB using `node import.js`.
 
-View partials:
-  - `views/partials`
-    - Moved repeating page elements to template partials;
-      - `header.ejs`
-      - `head.ejs`
-      - `nav.ejs` 
-      - `footer.ejs`
-  - View incorporated `dayjs` in `views/pages/login.ejs + register.ejs` 
-    - line 12
+The database seed file is located in `seeds/images.js`
 
-
-## Gallery JSON API
-Migrated frontend Javascript array to a custom Node module `/data/gallery.js`.
-  - Object properties included:
-    - id - Unique identifier (number);
-    - title - Image heading (string);
-    - description - Image description (string: 10-25 words);
-    - width - Image width in pixels (number);
-    - height - Image height in pixels (number);
-    - pathURL - a local path/filename to your image file(string);
-    - credit - The photo credit for the image such as a person, company or website (string).
-    - creditURL - A link to the original photo, photographer's home page, license details, etc (string).
-
-
-Created a JSON endpoint:
-  - `routes/api/v0.js` line 3, 5-7
-
-Using fetch() on the frontend, request your gallery array using your JSON endpoint. Refactor your gallery loop to use the fetched JSON array.
-  - `public/js/main.js` line 6
-
-
-## Heroku Deployment
+### Heroku Deployment
 Link to Heroku app above under links.
+
+
 
 ## Attributions
 
@@ -126,4 +76,121 @@ Link to Heroku app above under links.
 
 | Person      |                                  Links/Contribution                                   |
 | ----------- | :----------------------------------------------------------------------: |
-|Aidan O'Reilly + Vitaly Gins| Help with general coding questions, was able to reference to their code to get an idea of whats expected.|
+|Aidan O'Reilly | Help with general coding questions, was able to reference to their code to get an idea of whats expected.|
+|Vitaly Gins| Had problems with getting to load MongoDB data into heroku app. Vitaly was able to help me in a zoom call and we figured it out.|
+
+
+## Extras
+If needed below is a copy of the database seed:
+```
+const jeeps = [
+  {
+    id: 1,
+    title: 'Two Jeeps',
+    description: '2003 brown/gold Jeep TJ on the left and a 2008 Jeep JK on the right. Both chilling in a field somewhere in Calgary, AB.',
+    width: 1024,
+    height: 683,
+    pathURL:'images/couple-jeeps-medium.jpg', 
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt: 'Two Jeeps'
+  },
+  {
+    id: 2,
+    title: 'Jeep TJ',
+    description: '2003 brown/gold Jeep TJ out and about in it\'s natural habitat, probably somewhere in Waiparous.',
+    width: 1024,
+    height: 683,
+    pathURL:'images/jeep-background-medium.jpg',
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt: 'Two Jeeps'
+  },
+  {
+    id: 3,
+    title: 'Jeep TJ profile',
+    description: '2003 brown/gold Jeep TJ in a field being super photogenic, with a tad bit of saturation, my pride and joy.',
+    width: 1024,
+    height: 683,
+    pathURL:'images/jeep-profile-makayla-medium.jpg',
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt: 'jeeps'
+  },
+  {
+    id: 4,
+    title: 'Jeep JK profile',
+    description: '2007 black Jeep JK in the wild with a wide stance. Owner of the vehicle is Nathan Strome, also his pride and joy.',
+    width: 1024,
+    height: 683,
+    pathURL:'images/jeep-profile-nathan-medium.jpg',
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt: 'jeeps'
+  },
+  {
+    id: 5,
+    title: 'Jeep JK in BC',
+    description: '2007 black Jeep JK going for a stroll in the mountains of British Columbia, carrying a whole lot of camping equipment.',
+    width: 1024,
+    height: 683,
+    pathURL:'images/jeepjk-bctrip-medium.jpg',
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt:'jeeps in bc'
+  },
+  {
+    id: 6,
+    title: 'Two Jeeps airing down',
+    description: 'Two jeeps, as you may have already guessed a 2003 brown/gold Jeep TJ and a 2007 black Jeep JK airing down their tires before taking these beauties rock crawling.',
+    width: 1024,
+    height: 683,
+    pathURL:'images/jeepjk-jeeptj-airdown-medium.jpg',
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt:'jeeps'
+  },
+  {
+    id: 7,
+    title: 'Jeep TJ airing down',
+    description: '2003 Jeep TJ airing down solo, along with a Tim Hortons coffee on the right flare.',
+    width: 1024,
+    height: 683,
+    pathURL:'images/jeeptj-airdown-medium.jpg',
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt:'jeeps'
+  },
+  {
+    id: 8,
+    title: 'Jeep TJ going down a hill',
+    description: '2003 Jeep TJ attempting to go down a very steep hole, the picture does not do the hole justice.',
+    width: 1024,
+    height: 682,
+    pathURL:'images/jeeptj-hole-medium.jpg',
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt:'jeeps'
+  },
+  {
+    id: 9,
+    title: 'Jeep TJ side profile',
+    description: '2003 Jeep TJ admiring the sunrise after being freshly washed. Jeep had to wake up at 5:00AM sharp to capture this image.',
+    width: 1024,
+    height: 683,
+    pathURL:'images/jeeptj-sideprofile-medium.jpg',
+    linkURL: 'blah',
+    credit: 'Nathan Strome',
+    creditLink: 'https://www.instagram.com/evolution_jk/',
+    alt:'jeeps'
+  }
+];
+```

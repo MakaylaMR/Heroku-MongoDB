@@ -18,12 +18,12 @@ router.get('/', (req, res) => {
 
 // Login
 router.get('/login', (req, res) => {
-  res.render('pages/login', {pageTitle: 'login', dayjs: dayjs})
+  res.render('pages/login', {pageTitle: 'Login', dayjs: dayjs})
 })
 
 // Register
 router.get('/register', (req, res) => {
-  res.render('pages/register', {pageTitle: 'register', dayjs: dayjs})
+  res.render('pages/register', {pageTitle: 'Register', dayjs: dayjs})
 })
 
 router.use('/api/v0/', api);

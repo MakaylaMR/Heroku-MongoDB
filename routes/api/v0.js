@@ -15,7 +15,6 @@ router.get('/images', (req, res) => {
     }
     res.json(images)
   })
-
 })
 
 // Single id
