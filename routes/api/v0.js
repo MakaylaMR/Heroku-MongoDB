@@ -11,9 +11,8 @@ router.get('/images', (req, res) => {
   Jeep.find({}, (err, images) => {
     if (err) {
       res.status(404)
-      res.sendFile(__dirname + '../../public/404.html')
+      res.sendFile(__dirname + '../../views/pages/error')
     }
-    console.log(images)
     res.json(images)
   })
 
@@ -24,7 +23,7 @@ router.get('/images/:id', (req, res) => {
   Jeep.findOne({id : req.params.id}, (err, image) => {
     if (err || !image) {
       res.status(404)
-      res.sendFile(__dirname + '../../public/404.html')
+      res.sendFile(__dirname + '../../views/pages/error')
     }
     res.json(image)
   })

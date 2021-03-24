@@ -8,6 +8,7 @@ const jeepSchema = new mongoose.Schema(
     width: Number,
     height: Number,
     pathURL: String,
+    linkURL: String,
     credit: String,
     creditLink: String,
     alt: String

@@ -32,7 +32,6 @@ app.use((err, req, res, next) => {
   const errStatus = err.status || 500;
   res.locals.status = errStatus;
   res.status(errStatus);
-  // Render the error page using the default layout
   res.render('pages/error', {pageTitle: errStatus, errCode: errStatus});
 });
 

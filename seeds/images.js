@@ -6,6 +6,7 @@ const jeeps = [
     width: 1024,
     height: 683,
     pathURL:'images/couple-jeeps-medium.jpg', 
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt: 'Two Jeeps'
@@ -17,6 +18,7 @@ const jeeps = [
     width: 1024,
     height: 683,
     pathURL:'images/jeep-background-medium.jpg',
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt: 'Two Jeeps'
@@ -28,6 +30,7 @@ const jeeps = [
     width: 1024,
     height: 683,
     pathURL:'images/jeep-profile-makayla-medium.jpg',
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt: 'jeeps'
@@ -39,6 +42,7 @@ const jeeps = [
     width: 1024,
     height: 683,
     pathURL:'images/jeep-profile-nathan-medium.jpg',
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt: 'jeeps'
@@ -50,6 +54,7 @@ const jeeps = [
     width: 1024,
     height: 683,
     pathURL:'images/jeepjk-bctrip-medium.jpg',
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt:'jeeps in bc'
@@ -61,6 +66,7 @@ const jeeps = [
     width: 1024,
     height: 683,
     pathURL:'images/jeepjk-jeeptj-airdown-medium.jpg',
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt:'jeeps'
@@ -72,6 +78,7 @@ const jeeps = [
     width: 1024,
     height: 683,
     pathURL:'images/jeeptj-airdown-medium.jpg',
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt:'jeeps'
@@ -83,6 +90,7 @@ const jeeps = [
     width: 1024,
     height: 682,
     pathURL:'images/jeeptj-hole-medium.jpg',
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt:'jeeps'
@@ -94,6 +102,7 @@ const jeeps = [
     width: 1024,
     height: 683,
     pathURL:'images/jeeptj-sideprofile-medium.jpg',
+    linkURL: 'blah',
     credit: 'Nathan Strome',
     creditLink: 'https://www.instagram.com/evolution_jk/',
     alt:'jeeps'

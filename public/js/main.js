@@ -25,14 +25,20 @@ jeeps.forEach((jeep) => {
     const title = document.createElement('h2');
     title.innerHTML = jeep.title;
     figure.appendChild(title);
-  
+
+  // Creating anchor element on image
+    const linkURL = document.createElement('a');
+    linkURL.href = jeep.linkURL;
+    linkURL.classList.add('linkURL');
+    figure.appendChild(linkURL);
+
   //Creating img element, this is where the image, the alt, its source, height and width will be located (these become the image attributes)
     const img = document.createElement('img');
     img.src = jeep.pathURL;
     img.alt = jeep.description;
     img.width = jeep.width;
     img.height = jeep.height;
-    figure.appendChild(img);
+    linkURL.appendChild(img);
 
   //Creating a anchor element, this displays the photographers name and attached is a link to his "portfolio". (instagram)
     const creditLink = document.createElement('a');
